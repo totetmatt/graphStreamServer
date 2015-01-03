@@ -12,23 +12,34 @@ When the server receive a stream event , it will broadcast this event to all cur
 * Python
 * See req.txt for libraries
 
-# Install
+# Install & Run
 
 Git clone the project or Download it.
 
-Run `python graphStreamServer.py`. It will start by default a new server at `http://localhost:5000/` 
+Run `python graphStreamServer.py`.
 
+> The default configuration bind to 0.0.0.0:5000. The server should be accessible as :
+> 
+> - `http://localhost:5000/` : Good for test
+> - `http://<yourIP>:5000/` : Good to share across same network
+> - `http://<hostname>:5000/` : Good to share acress internet
+>
+> Adapt examples bellow to your situation.
 
 # Subscribe in Gephi
-> I consider you already have the Graph Streaming Plug-in installed in Gephi.
+> You already have the Graph Streaming Plug-in installed in Gephi.
 > 
-> I consider you already started a Graph Stream Server on at ***http://localhost:5000/***
+> You already started a Graph Stream Server on at ***http://localhost:5000/***
 
 In the **Streaming** tab, click-right on **Client** and choose **Connect to Stream**.
+![](./img/Gephi_01.png)
 
 On source Url, put **http://localhost:5000/stream** and click **Ok**.
+![](./img/Gephi_02.png)
 
 On the**Streaming** tab, you should see your Url with a Green Point.
+![](./img/Gephi_03.png)
+
 
 # Push Web Services
 
