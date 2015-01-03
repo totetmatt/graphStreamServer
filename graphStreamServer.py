@@ -99,6 +99,7 @@ def handleInvalidUsage(error):
     return response
     
 if __name__ == "__main__":
+    ##app.run(threaded=True,host='0.0.0.0')
     # Enable WSGI access logging via Paste
     app_logged = TransLogger(app)
 
@@ -107,7 +108,7 @@ if __name__ == "__main__":
 
     # Set the configuration of the web server
     cherrypy.config.update({
-        'engine.autoreload.on': True,
+        #'engine.autoreload.on': True,
         'log.screen': True,
         'server.socket_port': 5000,
         'server.socket_host': '0.0.0.0'
