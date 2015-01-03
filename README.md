@@ -37,7 +37,7 @@ In the **Streaming** tab, click-right on **Client** and choose **Connect to Stre
 On source Url, put **http://localhost:5000/stream** and click **Ok**.
 ![](./img/Gephi_02.png)
 
-On the**Streaming** tab, you should see your Url with a Green Point.
+On the **Streaming** tab, you should see your Url with a Green Point.
 ![](./img/Gephi_03.png)
 
 
@@ -53,7 +53,7 @@ Full description of data format : [https://wiki.gephi.org/index.php/Graph_Stream
 
 This service is a wrapper of the `http://localhost:5000/action` service to automatically handle the action overhead directly on the service. It makes the data to send more accessible. 
 
-* Url Parameter
+* Url Parameter `<actionToPerform>`
 	* `an` : **A**dd **N**ode
 	* `cn` : **C**hange **N**ode
 	* `dn` : **D**elete **N**ode
@@ -70,6 +70,11 @@ Request Data :
     			[....]
     		}
     	}
+> Example : 
+> Add a node with id "Node A"
+> 
+> - Url: `http://localhost:5000/an`
+> - Data: `{"Node A":{"label":"Node A"}}`
 
 ## POST **`http://localhost:5000/action`**
 
@@ -86,6 +91,12 @@ Request Data :
 			}
 		}
 	}
+
+> Example : 
+> Add a node with id "Node A"
+> 
+> - Url: `http://localhost:5000/action`
+> - Data: `{"an":{"Node A":{"label":"Node A"}}}`
 
 # Just thinking
 Endless possibilites of advanced Pub/Sub mechanism with Redis or RabbitMQ coupled with the Graph Stream Server (tested with Redis and works perfectly).
